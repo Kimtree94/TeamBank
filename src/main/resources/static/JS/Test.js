@@ -42,3 +42,69 @@ function getview( sell_no ){
     // 2. 페이지 전환
     location.href="/board/view";
 }
+
+
+
+//매장 등록
+function setstore(){
+        let data={storename:document.querySelector('.storename').value}
+        console.log(data);
+       $.ajax({
+           url:"/setstore",
+           type:"post",
+           data:JSON.stringify(data),
+           contentType:"application/json",
+           success:function(re){
+           alert(re)
+           console.log(re)
+           }
+       })
+}
+
+// 매장
+storelist()
+function storelist(){
+$.ajax({
+           url:"/storelist",
+           type:"get",
+           success:function(re){
+                alert(re)
+                console.log(re)
+                let html  = '';
+                for(let i=0; i<re.length; i++){
+                    html += '<option value="'+re[i].storeno+'" onclick="StoreNum('+re[i].storeno+')">'+re[i].storename+'</option>'
+                }
+                document.querySelector('.storelist').innerHTML = html;
+
+
+           }
+
+
+})
+}
+
+function StoreNum(storeno){
+    console.log(storeno);
+}
+
+// 매장 리스트
+storelistname()
+function storelistname(){
+$.ajax({
+           url:"/storelist",
+           type:"get",
+           success:function(re){
+                alert(re)
+                console.log(re)
+                let html  = '';
+                for(let i=0; i<re.length; i++){
+                    html += '<tr><th>'+re[i].storeno+'</th><th>'+re[i].storename+'</th></tr>'
+                }
+                document.querySelector('.storelistname').innerHTML = html;
+
+
+           }
+
+
+})
+}

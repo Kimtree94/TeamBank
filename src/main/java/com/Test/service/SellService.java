@@ -1,6 +1,7 @@
 package com.Test.service;
 
 import com.Test.domain.Dto.SellDto;
+import com.Test.domain.Dto.StoreDto;
 import com.Test.domain.Entity.SellEntity;
 import com.Test.domain.Entity.SellRepository;
 import com.Test.domain.Entity.StoreEntity;
@@ -63,5 +64,31 @@ public class SellService {
 
         return dlist;  // 4. 변환된 리스트 dist 반환
     }
+
+    @Transactional // 매장등록
+    public boolean setstore(StoreDto stdto){
+        if (stdto != null) {
+            StoreEntity storeEntity = storeRepository.save(stdto.toEntity());
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    @Transactional // 매장출력
+    public List<StoreDto> storelist(){
+        List<StoreEntity> dlist = storeRepository.findAll();
+
+        List<StoreDto> dtolist = new ArrayList<>();
+
+        for( StoreEntity entity : dlist ){
+            dtolist.add( entity.toDto() );
+        }
+        System.out.println(dtolist);
+
+        return dtolist;
+    }
+
+
 
 }

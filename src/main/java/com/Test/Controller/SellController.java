@@ -1,14 +1,12 @@
 package com.Test.Controller;
 
 import com.Test.domain.Dto.SellDto;
+import com.Test.domain.Dto.StoreDto;
 import com.Test.service.SellService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
@@ -28,4 +26,25 @@ public class SellController {
         return sellService.boardlist( page , sell_no);
 
     }
+
+    @GetMapping("/storelist")
+    public List<StoreDto> storelist(){
+        return sellService.storelist();
+
+    }
+
+
+
+
+
+    @PostMapping("/setstore")
+    public boolean setstore(@RequestBody StoreDto stdto){
+        System.out.println("stdto");
+        System.out.println(stdto);
+        return sellService.setstore(stdto);
+    }
+
+
+
+
 }

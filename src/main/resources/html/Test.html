@@ -22,10 +22,10 @@
 
 
     <div>
-        매장 등록 : <input type="text">  <button type="button" onclick=""> 등록</button> <br>
+        매장 등록 : <input type="text" class="storename">  <button type="button" onclick="setstore()"> 등록</button> <br>
 
         <h4>매장 리스트</h4>
-        <table>
+        <table class="storelistname">
             <tr> <th>번호 </th> <th> 매장명</th></tr>
         </table>
     </div>
@@ -35,7 +35,7 @@
     <div>
         판매 목록
         <div> 매장 이름</div>
-        <select name ="Stname">
+        <select name ="Stname" class="storelist">
             <option value="none">=== 선택 ===</option>
         </select>
         <div> 일별 매출 </div><div class="dayly"></div>

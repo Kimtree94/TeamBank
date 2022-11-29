@@ -17,22 +17,26 @@ import javax.persistence.*;
 @Entity
 public class SellEntity extends BaseEntity {
     //세팅
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int sell_no;
+    private int sellno;
 
     @Column(nullable = false)
-    private String sell_product;
+    private String sellproduct;
 
     @Column(nullable = false)
-    private String sell_price;
+    private String sellprice;
+
+    @ManyToOne
+    @JoinColumn(name = "storeno")
+    @ToString.Exclude
+    private StoreEntity storeEntity;
 
     public SellDto toDto() {
         return SellDto.builder()
-                .sell_no(this.sell_no)
-                .sell_product(this.sell_product)
-                .sell_price(this.sell_price)
+                .sellno(this.sellno)
+                .sellproduct(this.sellproduct)
+                .sellprice(this.sellprice)
                 .build();
     }
 }

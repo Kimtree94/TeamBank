@@ -11,13 +11,13 @@ import lombok.*;
 @Setter
 public class StoreDto {
 
-    private int store_no;
-    private String store_name;
+    private int storeno;
+    private String storename;
 
     public StoreEntity toEntity() {
         return StoreEntity.builder()
-                .store_no(this.store_no)
-                .store_name(this.store_name)
+                .storeno(this.storeno)
+                .storename(this.storename)
                 .build();
 
     }

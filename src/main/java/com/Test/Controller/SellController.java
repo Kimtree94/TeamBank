@@ -22,12 +22,10 @@ public class SellController {
     // 2. 게시물 목록 조회 [ 페이징,검색 ]
     @GetMapping("/product")
     public List<SellDto> boardlist(
-            @RequestParam("sell_no") int sell_no ,        // 카테고리 번호
-            @RequestParam("page") int page ,        // 현재 페이지 번호
-            @RequestParam("key") String key ,       // 검색할 필드명
-            @RequestParam("keyword") String keyword // 검색할 필드내 검색할 데이터
+            @RequestParam("sell_no") int sell_no ,  // 매장 번호
+            @RequestParam("page") int page        // 현재 페이지 번호
     ){
-        return sellService.boardlist( page , sell_no , key , keyword  );
+        return sellService.boardlist( page , sell_no);
 
     }
 }

@@ -25,15 +25,7 @@ public interface SellRepository extends JpaRepository<SellEntity, Integer  > {
 //    @Query( value = "select p from board p where p.bcno = ?1")
 //    Page<BoardEntity> findBybcno( int bcno ,  Pageable pageable);
 
-    // 1. 제목 검색
-    @Query( value = "select * from board where sell_no = :sell_no and sell_product like %:keyword%" , nativeQuery = true )
-    Page<SellEntity> findbyproductname(int sell_no, String keyword, Pageable pageable);
-    // 2. 내용 검색
-    @Query( value = "select * from board where sell_no = :sell_no and sell_product like %:keyword%" , nativeQuery = true )
-    Page<SellEntity> findbybcontent(int sell_no, String keyword, Pageable pageable);
-    // 3. 검색이 없을때
-    @Query( value = "select * from board where sell_no = :sell_no " , nativeQuery = true)
-    Page<SellEntity> findBybcno(@Param("sell_no") int sell_no, Pageable pageable);
-
+    @Query( value = "select * from sell_list  where storeno = :storeno" , nativeQuery = true)
+    Page<SellEntity> findByStoreno( int storeno , Pageable pageable);
 
 }

@@ -19,19 +19,20 @@ public class StoreEntity extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int store_no;
+    private int storeno;
 
     @Column(nullable = false)//not null
-    private String store_name;
+    private String storename;
 
-    @OneToMany
+    @OneToMany(mappedBy = "storeEntity" )
     @Builder.Default
+    @ToString.Exclude
     private List<SellEntity> sellEntityList = new ArrayList<>();
 
     public StoreDto toDto() {
         return StoreDto.builder()
-                .store_no(this.store_no)
-                .store_name(this.store_name)
+                .storeno(this.storeno)
+                .storename(this.storename)
                 .build();
     }
 

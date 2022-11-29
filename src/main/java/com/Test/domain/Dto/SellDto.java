@@ -11,17 +11,17 @@ import lombok.*;
 @Setter
 public class SellDto {
     //세팅
-    private int sell_no;
-    private String sell_product;
-    private String sell_price;
+    private int sellno;
+    private String sellproduct;
+    private String sellprice;
     private int startbtn;
     private int endbtn;
 
     public SellEntity toEntity() {
         return SellEntity.builder()
-                .sell_no(this.sell_no)
-                .sell_product(this.sell_product)
-                .sell_price(this.sell_price)
+                .sellno(this.sellno)
+                .sellproduct(this.sellproduct)
+                .sellprice(this.sellprice)
                 .build();
 
 

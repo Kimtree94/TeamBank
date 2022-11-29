@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface ProductRepository extends JpaRepository<ProductEntity, Integer  > {
+public interface SellRepository extends JpaRepository<SellEntity, Integer  > {
 
     // 1. 기본메소드 외 메소드 추가
     // 1. .findById( pk값 ) : 해당 pk의 엔티티 하나 호출
@@ -27,13 +27,13 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Integer 
 
     // 1. 제목 검색
     @Query( value = "select * from board where sell_no = :sell_no and sell_product like %:keyword%" , nativeQuery = true )
-    Page<ProductEntity> findbyproductname(int sell_no, String keyword, Pageable pageable);
+    Page<SellEntity> findbyproductname(int sell_no, String keyword, Pageable pageable);
     // 2. 내용 검색
     @Query( value = "select * from board where sell_no = :sell_no and sell_product like %:keyword%" , nativeQuery = true )
-    Page<ProductEntity> findbybcontent(int sell_no, String keyword, Pageable pageable);
+    Page<SellEntity> findbybcontent(int sell_no, String keyword, Pageable pageable);
     // 3. 검색이 없을때
     @Query( value = "select * from board where sell_no = :sell_no " , nativeQuery = true)
-    Page<ProductEntity> findBybcno(@Param("sell_no") int sell_no, Pageable pageable);
+    Page<SellEntity> findBybcno(@Param("sell_no") int sell_no, Pageable pageable);
 
 
 }

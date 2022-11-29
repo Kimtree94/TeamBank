@@ -14,6 +14,8 @@ public class SellDto {
     private int sell_no;
     private String sell_product;
     private String sell_price;
+    private int startbtn;
+    private int endbtn;
 
     public SellEntity toEntity() {
         return SellEntity.builder()

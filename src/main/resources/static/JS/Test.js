@@ -1,6 +1,12 @@
 alert('ssdsd')
 
 
+
+
+
+
+
+
 // ------- 전역변수 ------ //
 let sell_no = 0; // 매장번호 / 기본값 0 : 전체보기
 // 1. 게시물 출력 [ 1. 페이지 열렸을때 , 2.카테고리버튼 클릭했을때 ]
@@ -13,7 +19,7 @@ function boardlist(){
         success : function(list) {
             let html = '<tr>  <th> 번호 </th> <th> 제목 </th> <th> 작성자 </th></tr>';
 
-            console.log("/board/boardlist 요청");
+            console.log("요청");
             console.log("응답 잘 들어오니?");
             console.log(list);
 

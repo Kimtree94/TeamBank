@@ -20,7 +20,7 @@ public class SellController {
     public Resource getlist(){ return new ClassPathResource("html/Test.html"); }
 
     // 2. 게시물 목록 조회 [ 페이징,검색 ]
-    @GetMapping("/test")
+    @GetMapping("/product")
     public List<SellDto> boardlist(
             @RequestParam("sell_no") int sell_no ,        // 카테고리 번호
             @RequestParam("page") int page ,        // 현재 페이지 번호

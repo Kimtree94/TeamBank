@@ -34,11 +34,6 @@ public class SellService {
 
 
 
-
-
-
-
-
     // 2. 게시물 목록 조회
     @Transactional      // sell_no : 제품번호 , page : 현재 페이지번호 , key : 검색필드명 , keyword : 검색 데이터
     public List<SellDto> boardlist(int page , int sell_no , String key , String keyword  ){
@@ -48,7 +43,7 @@ public class SellService {
         // 3. 검색여부 / 제품번호  판단
         if( key.equals("sell_no") ){ // 검색필드가 제목이면
             elist = sellRepository.findbyproductname( sell_no , keyword , pageable);
-        }else if( key.equals("bcotent") ){ // 검색필드가 제목이면
+        }else if( key.equals("sell_product") ){ // 검색필드가 제목이면
             elist = sellRepository.findbybcontent( sell_no , keyword , pageable);
         }else{ // 검색이 없으면 // 카테고리 출력
             if( sell_no == 0  ) elist = sellRepository.findAll(pageable);

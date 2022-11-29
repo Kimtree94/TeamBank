@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,10 @@ import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
+
+@Service
 public class SellService {
     //세팅
     // ------------1.전역변수---------------//
@@ -24,8 +29,6 @@ public class SellService {
     private HttpServletResponse response; // 응답 객체 선언
     @Autowired
     private SellRepository sellRepository; // 회원 리포지토리 객체 선언
-    @Autowired
-    private SellEntity sellEntity;
     // @Autowired
     // private  BoardService boardService; // 불가능
 

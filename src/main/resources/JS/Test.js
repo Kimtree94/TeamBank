@@ -7,7 +7,7 @@ let sell_no = 0; // 매장번호 / 기본값 0 : 전체보기
 boardlist()
 function boardlist(){
     $.ajax({
-        url : "/board/sellList",
+        url : "/",
         type : "get",
         data : { "sell_no" : sell_no },   // sell_no : 매장번호
         success : function(list) {

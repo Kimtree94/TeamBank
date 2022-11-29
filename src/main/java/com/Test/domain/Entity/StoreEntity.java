@@ -24,7 +24,7 @@ public class StoreEntity extends BaseEntity{
     @Column(nullable = false)//not null
     private String store_name;
 
-    @OneToMany(mappedBy = "sellEntity")
+    @OneToMany
     @Builder.Default
     private List<SellEntity> sellEntityList = new ArrayList<>();
 

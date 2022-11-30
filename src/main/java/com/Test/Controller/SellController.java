@@ -24,18 +24,12 @@ public class SellController {
             @RequestParam("page") int page        // 현재 페이지 번호
     ){
         return sellService.boardlist( page , sell_no);
-
     }
-
     @GetMapping("/storelist")
     public List<StoreDto> storelist(){
         return sellService.storelist();
 
     }
-
-
-
-
 
     @PostMapping("/setstore")
     public boolean setstore(@RequestBody StoreDto stdto){
@@ -43,8 +37,5 @@ public class SellController {
         System.out.println(stdto);
         return sellService.setstore(stdto);
     }
-
-
-
 
 }

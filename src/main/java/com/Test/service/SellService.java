@@ -88,7 +88,4 @@ public class SellService {
 
         return dtolist;
     }
-
-
-
 }

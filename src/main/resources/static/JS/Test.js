@@ -1,12 +1,3 @@
-alert('ssdsd')
-
-
-
-
-
-
-
-
 // ------- 전역변수 ------ //
 let sell_no = 0; // 매장번호 / 기본값 0 : 전체보기
 // 1. 게시물 출력 [ 1. 페이지 열렸을때 , 2.카테고리버튼 클릭했을때 ]
@@ -42,9 +33,6 @@ function getview( sell_no ){
     // 2. 페이지 전환
     location.href="/board/view";
 }
-
-
-
 //매장 등록
 function setstore(){
         let data={storename:document.querySelector('.storename').value}
@@ -86,7 +74,6 @@ $.ajax({
 function StoreNum(storeno){
     console.log(storeno);
 }
-
 // 매장 리스트
 storelistname()
 function storelistname(){
@@ -104,7 +91,5 @@ $.ajax({
 
 
            }
-
-
 })
 }
